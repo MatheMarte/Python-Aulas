@@ -26,14 +26,13 @@ elif escolha == 4:
         print("Número de parcelas indisponível. Escolha acima de 3x.")
     else:
         taxa_juros = 0.2  # Taxa de juros mensal (em decimal, ex: 0.05 para 5%)
-        juros_mensais = preco * taxa_juros
-        valor_parcela = (preco + juros_mensais * numero_parcelas) / numero_parcelas
-        valor_final = preco + (juros_mensais * numero_parcelas)
+        valor_parcela = (preco * taxa_juros + preco ) / numero_parcelas
+        valor_final = preco + (taxa_juros * preco)
 
         print(f"""
             Sua compra vai ser parcelada em {numero_parcelas}x de R${valor_parcela:.2f} COM JUROS:
-            * Juros mensais: R${juros_mensais:.2f}
             * Valor final: R${valor_final:.2f}
             """)
 else:
     print("Opção inválida. Tente novamente.")
+
